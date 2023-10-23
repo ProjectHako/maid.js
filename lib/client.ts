@@ -65,7 +65,6 @@ export class MaidClient extends EventEmitter {
 		super()
 		this.#config = {
 			logLevel: 'info' as LogLevel,
-			isGuest: false,
 			account: '',
 			password: '',
 			isPlainTextPassword: true,
@@ -101,16 +100,9 @@ export class MaidClient extends EventEmitter {
 				this.logger.warn('MPay-已经生成了新的设备信息，不推荐一直在代码中保持该状态')
 				this.logger.warn('MPay-如果条件允许，请在config中传入通过MaidTools获取的MPayDevice')
 			}
-			// if isGuest
-			if (this.#config.isGuest) {
-				this.#mpayClient = new MPayBaseClient(this.#config.mpayDevice)
-				await this.#mpayClient.guestLogin()
-				this.logger.mark('MPay-成功通过游客登录，但后续会碰到崩溃，因为没实名 :)')
-			} else {
-				this.#mpayClient = new MPayBaseClient(this.#config.mpayDevice)
-				await this.#mpayClient.login(this.#config.account, this.#config.password, this.#config.isPlainTextPassword)
-				this.logger.mark('MPay-成功通过账密登录')
-			}
+			this.#mpayClient = new MPayBaseClient(this.#config.mpayDevice)
+			await this.#mpayClient.login(this.#config.account, this.#config.password, this.#config.isPlainTextPassword)
+			this.logger.mark('MPay-成功通过账密登录')
 		}
 		// if x19Session exists
 		if (this.#config.x19Session !== null) {
@@ -160,8 +152,6 @@ export type LogLevel = 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'fatal' |
 export interface Config {
 	/** 日志等级，默认info，不需要的话可以直接off */
 	logLevel?: LogLevel
-	/** 是否为游客登录，若是则不需要提供账户以及密码 */
-	isGuest?: boolean
 	/** 账户 */
 	account?: string
 	/** 账户的密码 */

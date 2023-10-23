@@ -10,7 +10,7 @@
 
 [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/ProjectHako)  
 
-因特殊原因而公开，但是mpay删除了一部分功能。  
+因特殊原因而公开，但是mpay删除了一部分功能，例如游客登录。  
 不主动维护，若对我们后续的动作感兴趣可以加入我们的Telegram频道。   
 如果此时阅读这段文字的您是网易工作人员，请务必和谐 《我的世界》中国版 PC登录协议。
 
