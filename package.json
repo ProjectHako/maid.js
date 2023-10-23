@@ -1,0 +1,53 @@
+{
+  "name": "maid-js",
+  "version": "0.0.11",
+  "description": "Yet another login protocol.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "tsc && node ./test/index.js",
+    "publish-it": "tsc && npm publish",
+    "doc": "tsc && typedoc --out docs lib"
+  },
+  "engines": {
+    "node": ">= v14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectHako/maid.js.git"
+  },
+  "keywords": [
+    "maid",
+    "protocol",
+    "login"
+  ],
+  "author": "project-hako",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ProjectHako/maid.js/issues"
+  },
+  "homepage": "https://github.com/ProjectHako/maid.js#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/node-schedule": "^2.1.0",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^32.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "axios": "^1.2.3",
+    "log4js": "^6.7.1",
+    "node-schedule": "^2.1.1"
+  },
+  "files": [
+    "/lib/**/*.js",
+    "/lib/**/*.d.ts",
+    "/lib/**/LICENSE"
+  ]
+}
